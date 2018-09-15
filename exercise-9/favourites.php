@@ -15,7 +15,12 @@ $favourites[] = stream_get_line(STDIN, 100, "\n");
 echo "What is your favourite place?\n";
 $favourites[] = stream_get_line(STDIN, 100, "\n");
 
-// iterate over array and echo each item
+// iterate over array and echo each item using:
+// for loop:
+for ($i = 0; $i < count($favourites); $i++) {
+  echo "$favourites[$i]\n";
+}
+// foreach loop:
 foreach($favourites as $item) {
   echo "$item\n";
 }
