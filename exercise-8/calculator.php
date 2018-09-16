@@ -7,6 +7,7 @@ while (true) {
   // prompt user for input x 3 (num-1, num-2, operator)
   // validate input and exit if fail (e.g. non-numeric etc.)
   // NOTE! using trim() on all user input as windows creates space!
+  // alternative is 'PHP_EOL' e.g. stream_get_line(STDIN, 100, PHP_EOL)
 
   echo "Enter a first whole number:\n";
   $num_1 = trim(stream_get_line(STDIN, 100, "\n"));
