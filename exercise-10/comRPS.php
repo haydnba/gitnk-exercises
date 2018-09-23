@@ -1,6 +1,5 @@
 <?php
 
-
 function validateInput(array $terms, string $input) {
   if (!array_key_exists($input, $terms)) {
     echo "Sorry, please enter a valid input\n";
