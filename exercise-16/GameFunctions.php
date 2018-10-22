@@ -8,13 +8,23 @@ function convert($input) {
 
 function result($comp, $human) {
   if ($comp == $human) return 'draw';
-  if ($comp == 'rock' && $human == 'paper') return 'human';
-  if ($comp == 'rock' && $human == 'scissors') return 'comp';
-  if ($comp == 'paper' && $human == 'rock') return 'comp';
-  if ($comp == 'paper' && $human == 'scissors') return 'human';
-  if ($comp == 'scissors' && $human == 'rock') return 'human';
-  if ($comp == 'scissors' && $human == 'paper') return 'comp';
+  if ($comp == 'rock' && $human == 'paper') return 'Human';
+  if ($comp == 'rock' && $human == 'scissors') return 'Computer';
+  if ($comp == 'paper' && $human == 'rock') return 'Computer';
+  if ($comp == 'paper' && $human == 'scissors') return 'Human';
+  if ($comp == 'scissors' && $human == 'rock') return 'Human';
+  if ($comp == 'scissors' && $human == 'paper') return 'Computer';
 }
 
 $userChoice = $_REQUEST['choice'];
 
+$userPlay = convert($userChoice);
+$compPlay = convert(rand(0, 2));
+
+$result = result($comptPlay, $userPlay);
+
+if ($result == 'draw') {
+  echo "Human played $userPlay and Computer played $computerPlay: Game was a $result!";
+} else {
+  echo "Human played $userPlay and Computer played $computerPlay: $result Wins!";
+}
