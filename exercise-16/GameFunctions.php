@@ -1,9 +1,9 @@
 <?php
 
 function convert($input) {
-  if ($input == 0 || $input == 'r') return 'rock';
-  if ($input == 1 || $input == 'p') return 'paper';
-  if ($input == 2 || $input == 's') return 'scissors';
+  if ($input === 0 || $input === 'r') return 'rock';
+  if ($input === 1 || $input === 'p') return 'paper';
+  if ($input === 2 || $input === 's') return 'scissors';
 }
 
 function result($comp, $human) {
@@ -21,10 +21,12 @@ $userChoice = $_REQUEST['choice'];
 $userPlay = convert($userChoice);
 $compPlay = convert(rand(0, 2));
 
-$result = result($comptPlay, $userPlay);
+$result = result($compPlay, $userPlay);
+
+// echo "Source: $userChoice; Human: $userPlay; Comp: $compPlay; Result: $result";
 
 if ($result == 'draw') {
-  echo "Human played $userPlay and Computer played $computerPlay: Game was a $result!";
+  echo "Human played $userPlay and Computer played $compPlay: Game was a $result!";
 } else {
-  echo "Human played $userPlay and Computer played $computerPlay: $result Wins!";
+  echo "Human played $userPlay and Computer played $compPlay: $result Wins!";
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Lets Play Rock, Paper, Scissors!!!</h1>
+
+  <a onclick="play('r')"><img src="" alt="" />RRR</a>
+  <a onclick="play('p')"><img src="" alt="" />PPP</a>
+  <a onclick="play('s')"><img src="" alt="" />SSS</a>
+
+  <h2>Game Result = <span id="result"></span></h2>
+
+  <script>
+
+
+    function play(strChoice) {
+      console.log(strChoice);
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          console.log(this.responseText);
+          document.getElementById('result').innerText = this.responseText;
+        }
+      };
+      xhr.open("GET", "GameFunctions.php?choice="+strChoice, true);
+      xhr.send();
+    }
+   
+  </script>
+  
+</body>
+</html>
