@@ -4,21 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link href="/assets/css/all.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
+  <title>Rock, Paper, Scissors</title>
+  <style>
+    h1, h2, h3 {font-family: 'Nosifer', cursive;}
+  </style>
 </head>
 <body>
 
-  <h1>Lets Play Rock, Paper, Scissors!!!</h1>
+  <div class="container">
+  
+    <div class="row justify-content-center">
+      <div class="col"><h1>Lets Play!!!</h1></div>
+    </div>
 
-  <a onclick="play('r')"><img src="" alt="" />RRR</a>
-  <a onclick="play('p')"><img src="" alt="" />PPP</a>
-  <a onclick="play('s')"><img src="" alt="" />SSS</a>
+    <div class="row justify-content-around">
+        <div class="col-sm"><h2>Rock</h2></div>
+        <div class="col-sm"><h2>Paper</h2></div>
+        <div class="col-sm"><h2>Scissors</h2></div>
+    </div>
+
+    <div class="row justify-content-around">
+      <div class="col-sm">
+        <a onclick="play(0)"><span><i class="far fa-hand-rock fa-7x"></span></i></a>
+      </div>
+      <div class="col-sm">
+        <a onclick="play(1)"><span><i class="far fa-hand-paper fa-7x"></span></i></a>
+      </div>
+      <div class="col-sm">
+        <a onclick="play(2)"><span><i class="far fa-hand-scissors fa-7x"></span></i></a>
+      </div>
+    </div>
+  
 
   <h2>Game Result = <span id="result"></span></h2>
 
+  <script src="/assets/js/bootstrap.bundle.js"></script>
   <script>
-
-
+    
     function play(strChoice) {
       console.log(strChoice);
       var xhr = new XMLHttpRequest();
@@ -33,6 +58,8 @@
     }
    
   </script>
+
+  </div>
   
 </body>
 </html>
